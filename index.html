@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BURGER&amp;BITE — Olovli Ta'm &amp; Tezkor Yetkazib Berish</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- TOP NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon">🍔</span>
+        <span class="logo-text">BURGER<span>&amp;</span>BITE</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Bosh sahifa</a>
+        <a href="#menu" class="nav-link">Menyu (20)</a>
+        <a href="#about" class="nav-link">Biz haqimizda</a>
+        <a href="#contact" class="nav-link">Aloqa</a>
+        <a href="admin.html" class="nav-link admin-link" title="Admin Panel">🛡️ Admin</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="openWishlistBtn" title="Yoqtirganlar">
+          <span class="heart-icon">❤️</span>
+          <span class="badge" id="wishlistCount">0</span>
+        </button>
+
+        <button class="icon-btn" id="openCartBtn" title="Savat">
+          <span>🛒</span>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+
+        <button class="btn-register" id="openAuthBtn">
+          <span id="userDisplayName">Ro'yxatdan o'tish</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menyu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (5 SEKUNDDA O'ZGARUVCHI SLAYDER) -->
+  <section class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge" id="heroBadge">🔥 YANGI TA'M REVOLYUTSIYASI</span>
+        <h1 class="hero-title" id="heroTitle">Haqiqiy Olovda Pishgan Premium Burgerlar</h1>
+        <p class="hero-desc" id="heroDesc">100% halol mol go'shti, maxsus tutunli sous va har kuni yangi yopiladigan yumshoq bulochkalar — BURGER&amp;BITE oshxonasidan to'g'ri eshigingizgacha!</p>
+        <div class="hero-meta">
+          <div class="hero-price-box">
+            <span class="small-label">Boshlang'ich narx:</span>
+            <strong id="heroPrice">34 000 so'mdan</strong>
+          </div>
+          <a href="#menu" class="btn-primary">Buyurtma berish ⚡</a>
+        </div>
+        <div class="hero-dots" id="heroDots"></div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <img id="heroImg" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="BURGER&BITE Taom" />
+          <div class="timer-bar"><div class="timer-progress" id="timerProgress"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION (20 TA TAOM + HAR BIRIDA 3 XIL VARIANT) -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">MAXSUS MENYU</span>
+        <h2>20 Xil Mazali Fast Food Taomlari</h2>
+        <p>Har bir taomga bosing va o'zingizga mos <strong>3 xil hajm yoki tarkib variantidan</strong> birini tanlang!</p>
+      </div>
+
+      <div class="category-filters" id="categoryFilters"></div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- JS orqali 20 ta taom yuklanadi -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BIZ HAQIMIZDA SECTION -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-img-box">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="BURGER&BITE Oshxonasi" />
+        <div class="about-stat-card">
+          <strong>100%</strong>
+          <span>Halol &amp; Yangi Mahsulotlar</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">BIZ HAQIMIZDA</span>
+        <h2>BURGER&amp;BITE — Har Bir Tishlamda Haqiqiy Zavq!</h2>
+        <p>
+          <strong>BURGER&amp;BITE</strong> kafesi fast-food madaniyatini yangi bosqichga olib chiqish maqsadida tashkil etilgan. Biz uchun tezkor ovqatlanish — bu sifatdan voz kechish emas, aksincha eng sara mahsulotlarni san'at darajasida tezkor tayyorlash demakdir.
+        </p>
+        <p>
+          Oshxonamizda muzlatilgan yarim tayyor kotletlar ishlatilmaydi: har tong fermadan keltirilgan sarxil go'sht maxsus ziravorlar bilan tayyorlanib, ochiq olovda qovuriladi. Maxsus firmenniy souslarimiz esa bosh oshpazimizning sirli retsepti asosida tayyorlanadi.
+        </p>
+        <div class="about-features">
+          <div class="feat-item">🔥 <span>Ochiq olovda pishirish texnologiyasi</span></div>
+          <div class="feat-item">🚀 <span>Maxsus termo-sumkalarda issiq yetkazish</span></div>
+          <div class="feat-item">🧀 <span>Tabiiy pishloq va yangi sabzavotlar</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & CONTACT -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-icon">🍔</span>
+          <span class="logo-text">BURGER<span>&amp;</span>BITE</span>
+        </a>
+        <p>O'zbekiston bo'ylab eng mazali burgerlar, lavashlar va pitsalar markazi. Har kuni soat 09:00 dan 03:00 gacha xizmatingizdamiz!</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Aloqa Ma'lumotlari</h4>
+        <ul>
+          <li>📞 Telefon: <a href="tel:+998901234567">+998 (90) 123-45-67</a></li>
+          <li>📞 Call-markaz: <a href="tel:+998712000000">+998 (71) 200-00-00</a></li>
+          <li>📍 Bosh filial: Andijon sh., Bobur shoh ko'chasi, 45-uy</li>
+          <li>✉️ Email: info@burgerbite.uz</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Tezkor Havolalar</h4>
+        <ul>
+          <li><a href="#home">Bosh sahifa</a></li>
+          <li><a href="#menu">Menyu</a></li>
+          <li><a href="#about">Biz haqimizda</a></li>
+          <li><a href="admin.html">Admin Boshqaruv Paneli</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BURGER&amp;BITE. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL 1: TAOMNING 3 XIL VARIANTINI TANLASH -->
+  <div class="modal-overlay" id="variantModal">
+    <div class="modal-card">
+      <button class="modal-close" data-close="variantModal">&times;</button>
+      <div class="variant-modal-body" id="variantModalBody"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: YOQTIRGANLAR (YURAKCHA) -->
+  <div class="modal-overlay" id="wishlistModal">
+    <div class="modal-card">
+      <button class="modal-close" data-close="wishlistModal">&times;</button>
+      <h3>❤️ Yoqtirgan Taomlaringiz</h3>
+      <div id="wishlistItems" class="drawer-list"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: SAVAT VA BUYURTMA RASMIYLASHTIRISH -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal-card modal-lg">
+      <button class="modal-close" data-close="cartModal">&times;</button>
+      <h3>🛒 Savat va Buyurtma Berish</h3>
+      <div id="cartItems" class="drawer-list"></div>
+      <div class="cart-total-bar">
+        <span>Jami to'lov:</span>
+        <strong id="cartTotalPrice">0 so'm</strong>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <h4>Yetkazib berish ma'lumotlari</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ismingiz *</label>
+            <input type="text" id="custName" required placeholder="Masalan: Jasurbek" />
+          </div>
+          <div class="form-group">
+            <label>Telefon raqamingiz *</label>
+            <input type="tel" id="custPhone" required placeholder="+998 90 123 45 67" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Viloyatni tanlang (12 ta viloyat) *</label>
+            <select id="regionSelect" required>
+              <option value="">-- Viloyatni tanlang --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tumanni tanlang *</label>
+            <select id="districtSelect" required disabled>
+              <option value="">-- Avval viloyatni tanlang --</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Manzilni kiritish usuli:</label>
+          <div class="address-mode-tabs">
+            <button type="button" class="mode-btn active" id="btnManualAddr">✍️ Qo'lda kiritish</button>
+            <button type="button" class="mode-btn" id="btnMapAddr">📍 Google Map orqali</button>
+          </div>
+        </div>
+
+        <div id="manualAddressBox" class="form-group">
+          <input type="text" id="manualAddressInput" placeholder="Ko'cha nomi, uy raqami, mo'ljal..." />
+        </div>
+
+        <div id="mapAddressBox" class="form-group hidden">
+          <div class="map-controls">
+            <button type="button" class="btn-secondary" id="detectGpsBtn">📡 Mening joylashuvimni aniqlash (GPS)</button>
+            <input type="text" id="mapCoordsInput" placeholder="Xaritadan tanlang yoki koordinata kiriting" readonly />
+          </div>
+          <div class="map-frame-wrap">
+            <iframe
+              id="googleMapFrame"
+              src="https://maps.google.com/maps?q=40.7821,72.3442&z=13&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary full-width">Buyurtmani tasdiqlash ✅</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 4: RO'YXATDAN O'TISH -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-card modal-sm">
+      <button class="modal-close" data-close="authModal">&times;</button>
+      <h3>👤 Ro'yxatdan o'tish / Kirish</h3>
+      <form id="authForm" class="checkout-form">
+        <div class="form-group">
+          <label>To'liq ismingiz</label>
+          <input type="text" id="regName" required placeholder="Ismingizni kiriting" />
+        </div>
+        <div class="form-group">
+          <label>Telefon raqamingiz</label>
+          <input type="tel" id="regPhone" required placeholder="+998 90 000 00 00" />
+        </div>
+        <button type="submit" class="btn-primary full-width">Saqlash va Kirish</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST BILDIRISHNOMA -->
+  <div id="toast" class="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

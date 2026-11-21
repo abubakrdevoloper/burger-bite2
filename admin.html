@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BURGER&amp;BITE — Xavfsiz Admin Panel</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- XAVFSIZLIK KIRISH EKRANI -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <div class="shield-badge">🛡️ XAVFSIZLIK TIZIMI FAOL</div>
+      <h2>BURGER<span>&amp;</span>BITE Admin</h2>
+      <p>Boshqaruv paneliga kirish uchun login va maxfiy parolni kiriting.</p>
+      <form id="adminLoginForm">
+        <div class="input-group">
+          <label>Admin Login</label>
+          <input type="text" id="adminUser" required autocomplete="off" placeholder="admin" />
+        </div>
+        <div class="input-group">
+          <label>Maxfiy Parol</label>
+          <input type="password" id="adminPass" required placeholder="••••••••" />
+        </div>
+        <div id="loginError" class="error-msg"></div>
+        <button type="submit" class="btn-primary">Tizimga kirish 🔐</button>
+      </form>
+      <div class="security-hint">
+        <small>Standart kirish: <strong>admin</strong> / <strong>Burger2026!</strong><br>
+        (3 marta noto'g'ri urinishda tizim 30 soniyaga bloklanadi)</small>
+      </div>
+      <a href="index.html" class="back-link">← Asosiy saytga qaytish</a>
+    </div>
+  </div>
+
+  <!-- ASOSIY ADMIN DASHBOARD -->
+  <div class="admin-dashboard hidden" id="adminDashboard">
+    <header class="admin-header">
+      <div class="header-left">
+        <span class="logo">🍔 BURGER<span>&amp;</span>BITE</span>
+        <span class="sec-status">🟢 SHA-256 &amp; XSS Himoya Faol</span>
+      </div>
+      <div class="header-right">
+        <a href="index.html" target="_blank" class="btn-outline">🌐 Saytni ko'rish</a>
+        <button id="logoutBtn" class="btn-danger">Chiqish</button>
+      </div>
+    </header>
+
+    <main class="admin-container">
+      <!-- STATISTIKA KARTALARI -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>Jami Taomlar</span>
+          <strong id="statProducts">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Kelib tushgan Buyurtmalar</span>
+          <strong id="statOrders">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Xavfsizlik Holati</span>
+          <strong style="color:#10b981;">Himoyalangan</strong>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <!-- YANGI TAOM QO'SHISH FORMASI (3 XIL VARIANT BILAN) -->
+        <section class="panel-card">
+          <h3>➕ Yangi Taom Qo'shish (3 xil variant)</h3>
+          <form id="addProductForm" class="admin-form">
+            <div class="form-group">
+              <label>Taom nomi *</label>
+              <input type="text" id="pName" required placeholder="Masalan: Super Double Burger" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Kategoriya *</label>
+                <input type="text" id="pCategory" required placeholder="Burgerlar / Pitsalar / Lavashlar" />
+              </div>
+              <div class="form-group">
+                <label>Rasm URL manzili *</label>
+                <input type="url" id="pImg" required placeholder="https://images.unsplash.com/..." />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Qisqacha tavsif *</label>
+              <input type="text" id="pDesc" required placeholder="Taom tarkibi haqida ma'lumot..." />
+            </div>
+
+            <div class="variants-box">
+              <h4>3 Xil Variantni Kiriting:</h4>
+              <div class="v-row">
+                <input type="text" id="v1Name" required placeholder="1-variant nomi (Mini)" />
+                <input type="number" id="v1Price" required placeholder="Narxi (so'm)" min="1000" />
+                <input type="text" id="v1Weight" placeholder="200g" />
+              </div>
+              <div class="v-row">
+                <input type="text" id="v2Name" required placeholder="2-variant nomi (Classic)" />
+                <input type="number" id="v2Price" required placeholder="Narxi (so'm)" min="1000" />
+                <input type="text" id="v2Weight" placeholder="300g" />
+              </div>
+              <div class="v-row">
+                <input type="text" id="v3Name" required placeholder="3-variant nomi (Mega XL)" />
+                <input type="number" id="v3Price" required placeholder="Narxi (so'm)" min="1000" />
+                <input type="text" id="v3Weight" placeholder="420g" />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Saytga Yuklash 🚀</button>
+          </form>
+        </section>
+
+        <!-- SAYTDAGI TAOMLARNI BOSHQARISH VA O'CHIRISH -->
+        <section class="panel-card">
+          <div class="panel-head">
+            <h3>📋 Saytdagi Taomlar Ro'yxati</h3>
+            <button id="resetDefaultBtn" class="btn-outline-sm">Standart 20 taomni tiklash</button>
+          </div>
+          <div id="adminProductsList" class="admin-list"></div>
+        </section>
+      </div>
+
+      <!-- MIJOZLAR BUYURTMALARI -->
+      <section class="panel-card" style="margin-top:24px;">
+        <h3>📦 Mijozlardan Kelgan Buyurtmalar</h3>
+        <div id="adminOrdersList" class="admin-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
